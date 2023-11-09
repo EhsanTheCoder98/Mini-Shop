@@ -75,13 +75,12 @@ const Login = () => {
           onChange={inputHandler}
         />
         <button onClick={signupHandler}>Sign Up</button>
+        <button onClick={signinHandler}>Sign In</button>
       </form>
       <h4> Sign In With Google Account </h4>
       <button onClick={googleHandler}>
         <FcGoogle />
       </button>
-      <h2>Already have Account??</h2>
-      <button onClick={signinHandler}>Sign In</button>
     </>
   );
 };
