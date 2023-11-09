@@ -13,7 +13,6 @@ import {
 import { auth } from "../firebase/firebase";
 
 const Login = () => {
-  const [login, setLogin] = useState(false);
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -24,7 +23,9 @@ const Login = () => {
   const googleHandler = (e) => {
     e.preventDefault();
     const provider = new GoogleAuthProvider();
-    return signInWithPopup(auth, provider);
+    return signInWithPopup(auth, provider).then(()=>{
+        navigate("/landingpage")
+    });
   };
   const navigate = useNavigate();
   const signupHandler = (e) => {
@@ -57,31 +58,35 @@ const Login = () => {
   };
 
   return (
-    <>
-      <h1>Welcome To The Mini Shop</h1>
-      <form className={styles.formcontainer}>
-        <input
-          type="email"
-          placeholder="Enter Your Email"
-          name="email"
-          value={data.email}
-          onChange={inputHandler}
-        />
-        <input
-          type="password"
-          placeholder="Enter Your Password"
-          name="password"
-          value={data.password}
-          onChange={inputHandler}
-        />
-        <button onClick={signupHandler}>Sign Up</button>
-        <button onClick={signinHandler}>Sign In</button>
-      </form>
-      <h4> Sign In With Google Account </h4>
-      <button onClick={googleHandler}>
-        <FcGoogle />
-      </button>
-    </>
+    <div className={styles.backgroundcontainer}>
+      <div className={styles.container}>
+        <h1>Welcome To The Mini Shop</h1>
+        <form className={styles.formContainer}>
+          <input
+            type="email"
+            placeholder="Enter Your Email"
+            name="email"
+            value={data.email}
+            onChange={inputHandler}
+          />
+          <input
+            type="password"
+            placeholder="Enter Your Password"
+            name="password"
+            value={data.password}
+            onChange={inputHandler}
+          />
+          <button onClick={signupHandler}>Sign Up</button>
+          <button onClick={signinHandler}>Sign In</button>
+        </form>
+        <div className={styles.googleSigninContainer}>
+          <h4> Sign In With Google Account </h4>
+          <button onClick={googleHandler}>
+            <FcGoogle className={styles.icon} />
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };
 
