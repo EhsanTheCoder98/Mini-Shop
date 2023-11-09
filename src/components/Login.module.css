@@ -15,10 +15,9 @@
 }
 
 .container {
-    border: 1px solid silver;
     padding: 50px;
     border-radius: 20px;
-    box-shadow: 5px 8px 32px 6px rgba(0,0,0,0.61);
+    box-shadow: 5px 8px 32px 1px rgba(0,0,0,0.61);
 }
 .container h1{
     margin-bottom: 30px;
