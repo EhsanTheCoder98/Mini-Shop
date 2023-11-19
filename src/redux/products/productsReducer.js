@@ -24,6 +24,7 @@ const productsReducer = (state=initialState,action) => {
                 products:[],
                 error:action.payload
             }    
+        default: return state;    
     }
 }
 
