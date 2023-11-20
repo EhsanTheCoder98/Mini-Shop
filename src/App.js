@@ -9,14 +9,23 @@ import store from "./redux/store";
 // SPA
 import { Routes, Route, Navigate } from "react-router-dom";
 
+const NavbarAndPage = () => (
+  <>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Navigate to="/landingpage" />} />
+      <Route path="/landingpage" element={<LandingPage />} />
+    </Routes>
+  </>
+);
+
 const App = () => {
   return (
     <Provider store={store}>
-      <Navbar />
       <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/*" element={<Navigate to={"/login"} />} />
-          <Route path="/landingpage" element={<LandingPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/*" element={<Navigate to={"/login"} />} />
+        <Route path="/landingpage" element={<NavbarAndPage />} />
       </Routes>
     </Provider>
   );
