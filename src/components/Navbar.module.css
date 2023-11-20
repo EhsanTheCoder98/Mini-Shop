@@ -1,0 +1,45 @@
+.container {
+    background: linear-gradient(167deg, rgba(106,106,106,1) 43%, rgba(201,201,201,1) 100%);;
+    padding: 10px;
+    display: flex;
+}
+.container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.profileLogo {
+    width: 30px;
+    height: 30px;
+    color: white;
+    margin-left: 10px;
+    transition: all .2s ease;
+}
+.profileLogo:hover {
+    color: rgb(237, 237, 237);
+}
+.cartLogo {
+    width: 30px;
+    height: 30px;
+    color: white;
+    margin-left: 10px;
+    transition: all .2s ease;
+}
+.cartLogo:hover {
+    color: rgb(237, 237, 237);
+}
+.container h3 {
+    margin: 0 auto;
+}
+.signoutButton {
+    margin-right: 20px;
+    width: 30px;
+    transition: all .2s ease;
+}
+.signoutLogo {
+    width: 30px;
+    height: 30px;
+}
+.signoutButton:hover {
+    color: rgb(94, 94, 94);
+}
