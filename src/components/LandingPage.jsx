@@ -1,4 +1,8 @@
 import React, { useEffect } from "react";
+import styles from './LandingPage.module.css';
+
+// components
+import ProductsDiv from "./ProductsDiv";
 
 // redux
 import { useSelector } from "react-redux/es/hooks/useSelector";
@@ -14,10 +18,8 @@ const LandingPage = () => {
     console.log("rendered")
   }, []);
   return (
-    <div>
-      {productsData.products.map((item) => (
-        <p>{item.title}</p>
-      ))}
+    <div className={styles.container}>
+      {productsData.products.map(item=><ProductsDiv key={item.id} products={item} />)}
     </div>
   );
 };
