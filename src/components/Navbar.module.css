@@ -1,7 +1,12 @@
 .container {
-    background: linear-gradient(167deg, rgba(106,106,106,1) 43%, rgba(201,201,201,1) 100%);;
+    backdrop-filter: blur(20px);
     padding: 10px;
     display: flex;
+    position: fixed;
+    width: 100%;
+    opacity: .95;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 .container button {
     background: none;
@@ -11,22 +16,22 @@
 .profileLogo {
     width: 30px;
     height: 30px;
-    color: white;
+    color: black;
     margin-left: 10px;
     transition: all .2s ease;
 }
 .profileLogo:hover {
-    color: rgb(237, 237, 237);
+    color: rgba(0, 0, 0, 0.677);
 }
 .cartLogo {
     width: 30px;
     height: 30px;
-    color: white;
+    color: black;
     margin-left: 10px;
     transition: all .2s ease;
 }
 .cartLogo:hover {
-    color: rgb(237, 237, 237);
+    color: rgba(0, 0, 0, 0.677);
 }
 .container h3 {
     margin: 0 auto;
