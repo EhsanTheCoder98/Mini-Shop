@@ -4,6 +4,7 @@ import React from "react";
 import Login from "./components/Login";
 import LandingPage from "./components/LandingPage";
 import Navbar from "./components/Navbar";
+import ProductDetails from "./components/ProductDetails";
 
 // redux
 import { Provider } from "react-redux";
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/landingpage/*" element={<NavbarAndPage />}>
           <Route index element={<LandingPage />} />
         </Route>
+        <Route path="/productdetail" element={<ProductDetails />}/>
       </Routes>
     </Provider>
   );

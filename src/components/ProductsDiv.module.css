@@ -4,6 +4,8 @@
     padding: 10px;
     text-align: center;
     margin: 70px 10px -40px;
+    display: flex;
+    flex-direction: column;
 }
 .container img {
     width: 120px;
