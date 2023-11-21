@@ -7,15 +7,12 @@ import Navbar from "./components/Navbar";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 // SPA
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, Outlet } from "react-router-dom";
 
 const NavbarAndPage = () => (
   <>
     <Navbar />
-    <Routes>
-      <Route path="/" element={<Navigate to="/landingpage" />} />
-      <Route path="/landingpage" element={<LandingPage />} />
-    </Routes>
+    <Outlet />
   </>
 );
 
@@ -25,7 +22,9 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/*" element={<Navigate to={"/login"} />} />
-        <Route path="/landingpage" element={<NavbarAndPage />} />
+        <Route path="/landingpage/*" element={<NavbarAndPage />}>
+          <Route index element={<LandingPage />} />
+        </Route>
       </Routes>
     </Provider>
   );

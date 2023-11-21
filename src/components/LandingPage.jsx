@@ -11,6 +11,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     dispatch(fetchAPI());
+    console.log("rendered")
   }, []);
   return (
     <div>
