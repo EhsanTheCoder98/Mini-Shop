@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "./LandingPage.module.css";
+import loading from '../gif/Infinity-1.1s-210px (1).gif';
 
 // components
 import ProductsDiv from "./ProductsDiv";
@@ -20,7 +21,7 @@ const LandingPage = () => {
   return (
     <div className={styles.container}>
       {productsData.loading ? (
-        <h1 className={styles.phrases}>LOADING PRODUCTS</h1>
+        <img className={styles.phrases} src={loading} />
       ) : productsData.error ? (
         <h1 className={styles.phrases}>There is a problem!</h1>
       ) : (

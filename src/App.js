@@ -5,6 +5,8 @@ import Login from "./components/Login";
 import LandingPage from "./components/LandingPage";
 import Navbar from "./components/Navbar";
 import ProductDetails from "./components/ProductDetails";
+import Cart from "./components/Cart";
+import Profile from "./components/Profile";
 
 // redux
 import { Provider } from "react-redux";
@@ -25,14 +27,16 @@ const App = () => {
     <Provider store={store}>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/*" element={<Navigate to={"/login"} />} />
         <Route path="/landingpage/*" element={<NavbarAndPage />}>
           <Route index element={<LandingPage />} />
+          <Route path="productdetail" element={<ProductDetails />} />
+          <Route path="cart" element={<Cart />}/>
+          <Route path="profile" element={<Profile />}/>
         </Route>
-        <Route path="/productdetail" element={<ProductDetails />}/>
       </Routes>
     </Provider>
   );
 };
+
 
 export default App;

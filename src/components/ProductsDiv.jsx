@@ -8,7 +8,7 @@ const ProductsDiv = ({products}) => {
             <img src={products.image}/>
             <p>{products.title}</p>
             <span>{products.price}$</span>
-            <Link to={"/productdetail"}>Details</Link>
+            <Link to={"productdetail"}>Details</Link>
         </div>
     );
 };

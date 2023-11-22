@@ -32,8 +32,11 @@
 .cartLogo:hover {
     color: rgba(0, 0, 0, 0.677);
 }
-.container h3 {
+.logo{
     margin: 0 auto;
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
 }
 .signoutButton {
     margin-right: 20px;
