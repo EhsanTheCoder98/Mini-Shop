@@ -11,8 +11,10 @@
     height: 80vh;
     position: sticky;
     top: 70px;
+    opacity: 0;
+    transform: translateX(50px);
+    transition:all 1s ease-in-out;
 }
-
 .leftcontainer {
     display: flex;
     flex: 3;
@@ -20,6 +22,13 @@
     flex-wrap: wrap;
     margin-left: 10px;
     margin-right: 0;
+    transform: translateX(-50px);
+    opacity: 0;
+    transition:all 1s ease-in-out;
+}
+.fade {
+    opacity: 1;
+    transform: translateX(0);
 }
 .phrases {
     margin: 200px auto;

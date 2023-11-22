@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect , useState } from "react";
 import styles from "./LandingPage.module.css";
 import loading from "../gif/Infinity-1.1s-210px (1).gif";
 
@@ -12,15 +12,18 @@ import { fetchAPI } from "../redux/products/productsAction";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
+  const [isVisible,setIsVisibile] = useState(false);
   const productsData = useSelector((state) => state.productsContainer);
 
   useEffect(() => {
     dispatch(fetchAPI());
-    console.log("rendered");
+    setTimeout(()=>{
+      setIsVisibile(true);
+    },1200)
   }, []);
   return (
     <div className={styles.bigContainer}>
-      <div className={styles.leftcontainer}>
+      <div className={`${styles.leftcontainer} ${isVisible ? styles.fade : ''}`}>
         {productsData.loading ? (
           <div className={styles.loadingContainer}>
             <img className={styles.phrases} src={loading} />
@@ -34,9 +37,10 @@ const LandingPage = () => {
           ))
         )}
       </div>
-      <div className={styles.rightcontainer}>
+      {!productsData.loading && !productsData.error ? <div className={`${styles.rightcontainer} ${isVisible ? styles.fade : ''}`}>
         bonus status filters
-      </div>
+      </div> : null }
+      
     </div>
   );
 };

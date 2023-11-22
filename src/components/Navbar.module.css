@@ -6,6 +6,7 @@
     width: 100%;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
+    z-index: 100;
 }
 .container button {
     background: none;
