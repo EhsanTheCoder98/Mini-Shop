@@ -1,11 +1,18 @@
 .container {
-    border: 2px solid black;
+    border: 1px solid silver;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
     width: 150px;
     padding: 10px;
     text-align: center;
-    margin: 70px 10px -40px;
+    margin: 70px 3px -40px;
     display: flex;
     flex-direction: column;
+    transition: all .13s ease;
+}
+.container:hover {
+    box-shadow: -6px 11px 48px -7px rgba(0,0,0,0.58); ;
 }
 .container img {
     width: 120px;

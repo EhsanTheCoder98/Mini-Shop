@@ -13,7 +13,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 
 // SPA
-import { Routes, Route, Navigate, Outlet } from "react-router-dom";
+import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 
 const NavbarAndPage = () => (
   <>
@@ -27,6 +27,7 @@ const App = () => {
     <Provider store={store}>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/*" element={<Navigate to={"/login"}/>} />
         <Route path="/landingpage/*" element={<NavbarAndPage />}>
           <Route index element={<LandingPage />} />
           <Route path="productdetail" element={<ProductDetails />} />
