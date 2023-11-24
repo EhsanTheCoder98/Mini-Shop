@@ -11,7 +11,7 @@ const ProductsDiv = ({products}) => {
             <img src={products.image}/>
             <p>{titleHandler(products.title)}</p>
             <span>{products.price}$</span>
-            <Link to={"productdetail"}>Details</Link>
+            <Link to={`productdetail/${products.id}`}>Details</Link>
         </div>
     );
 };
