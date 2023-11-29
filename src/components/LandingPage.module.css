@@ -38,6 +38,12 @@
   border-radius: 5px;
   background-color: rgba(227, 136, 0, 0.623);
 }
+.buttonContainer button:last-child {
+    background-color: #9bd6e199;
+}
+.buttonContainer button:last-child:hover{
+    background-color: #9bd7e1ca;
+}
 .buttonContainer button:hover {
   background-color: rgb(227, 136, 0);
 }
@@ -77,6 +83,7 @@
 }
 .searchContainer input {
   border: none;
+  text-align: center;
   border-bottom: 1px solid silver;
   outline: none;
 }

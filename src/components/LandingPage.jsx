@@ -72,12 +72,12 @@ const LandingPage = () => {
             <button onClick={() => sortProducts("men's clothing")}>
               Mens Clothing
             </button>
+            <button onClick={() => sortProducts("women's clothing")}>
+              Women's Clothing
+            </button>
             <button onClick={() => sortProducts("jewelery")}>Jewelery</button>
             <button onClick={() => sortProducts("electronics")}>
               Electronics
-            </button>
-            <button onClick={() => sortProducts("women's clothing")}>
-              Women's Clothing
             </button>
             <button onClick={() => resetStore()}>Reset Store</button>
           </div>
