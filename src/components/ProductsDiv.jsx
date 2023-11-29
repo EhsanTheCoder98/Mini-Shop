@@ -9,9 +9,9 @@ const ProductsDiv = ({products}) => {
     return (
         <div className={styles.container}>
             <img src={products.image}/>
-            <p>{titleHandler(products.title)}</p>
-            <span>{products.price}$</span>
-            <Link to={`productdetail/${products.id}`}>Details</Link>
+            <p className={styles.title}>{titleHandler(products.title)}</p>
+            <span className={styles.title}>{products.price}$</span>
+            <Link to={`productdetail/${products.id}`} className={styles.detail}>Details&Buy</Link>
         </div>
     );
 };

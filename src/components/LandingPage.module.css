@@ -1,45 +1,100 @@
 .bigContainer {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 .rightcontainer {
-    flex: 1;
-    margin-top: 70px;
-    margin-right: 10px;
-    border: 1px solid silver;
-    border-radius: 10px;
-    height: 80vh;
-    position: sticky;
-    top: 70px;
-    opacity: 0;
-    transform: translateX(50px);
-    transition:all 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 70px;
+  margin-right: 10px;
+  border: 1px solid silver;
+  border-radius: 10px;
+  height: 80vh;
+  position: sticky;
+  top: 70px;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 1s ease-in-out;
+}
+.rightcontainer p {
+  margin: 5px auto;
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed silver;
+}
+.buttonContainer button {
+  width: 130px;
+  background: none;
+  margin: 3px auto;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: rgba(227, 136, 0, 0.623);
+}
+.buttonContainer button:hover {
+  background-color: rgb(227, 136, 0);
 }
 .leftcontainer {
-    display: flex;
-    flex: 3;
-    width: fit-content;
-    flex-wrap: wrap;
-    margin-left: 10px;
-    margin-right: 0;
-    transform: translateX(-50px);
-    opacity: 0;
-    transition:all 1s ease-in-out;
+  display: flex;
+  flex: 3;
+  width: fit-content;
+  flex-wrap: wrap;
+  margin-left: 10px;
+  margin-right: 0;
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
 }
 .fade {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 .phrases {
-    margin: 200px auto;
-    transition: all 1s ease;
+  margin: 200px auto;
+  transition: all 1s ease;
 }
 .loadingContainer {
-    text-align: center;
-    margin: 0 auto;
-    padding: 1px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1px;
 }
 .loadingContainer h2 {
-    position: fixed;
-    top: 360px;
+  position: fixed;
+  top: 360px;
+}
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto;
+  text-align: center;
+}
+.searchContainer input {
+  border: none;
+  border-bottom: 1px solid silver;
+  outline: none;
+}
+.searchContainer input::placeholder {
+  text-align: center;
+}
+.searchContainer button {
+  background: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+.searchIcon {
+  width: 20px;
+  height: 20px;
+  transition: all .13s ease;
+}
+.searchIcon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }

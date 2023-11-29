@@ -1,8 +1,8 @@
 .container {
     border-left: 1px solid silver;
     border-right: 1px solid silver;
-    cursor: pointer;
     width: 150px;
+    height: 220px;
     padding: 10px;
     text-align: center;
     margin: 70px -.5px -40px;
@@ -17,4 +17,21 @@
     margin: 0 auto;
     width: 120px;
     height: 140px;
+}
+.detail {
+    text-decoration: none;
+    color: black;
+    background-color: #9bd6e199;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 3px;
+    margin: 0 auto;
+    transition: all .13s ease;
+}
+.detail:hover {
+    background-color: #9bd7e1ca;
+}
+.title {
+    font-size: .8rem;
+    font-weight: 600 ;
 }
