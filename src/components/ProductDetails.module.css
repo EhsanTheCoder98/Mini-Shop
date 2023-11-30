@@ -7,8 +7,30 @@
   align-items: center;
 }
 .container {
-    width: 50%;
-    margin: 0 auto;
-    border: 1px solid black;
-    height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+  border: 1px solid silver;
+  height: 60%;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
 }
+.container img {
+  flex: 1;
+  width: 250px;
+  height: 250px;
+}
+.rightContainer {
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
