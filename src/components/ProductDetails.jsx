@@ -5,13 +5,16 @@ import { useParams } from "react-router-dom";
 
 // redux
 import { useSelector } from "react-redux/es/hooks/useSelector";
+import {useDispatch} from 'react-redux'
 import { titleHandler } from "../methods/functions";
+import { addItem } from "../redux/cart/cartAction";
 
 const ProductDetails = () => {
   const params = useParams();
   const products = useSelector((state) => state.productsContainer.products);
   const data = products[params.id - 1];
   const { title , image , description , price , category } = data;
+  const dispatch = useDispatch();
 
   return (
     <div className={styles.bigcontainer}>
@@ -22,7 +25,7 @@ const ProductDetails = () => {
           <p>{description}</p>
           <span>{category}</span>
           <span>{price}$</span>
-          <button>Add to cart</button>
+          <button onClick={()=>dispatch(addItem(data))}>Add to cart</button>
           <button>Erase from cart</button>
         </div>
       </div>
