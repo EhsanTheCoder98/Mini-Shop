@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import {useDispatch} from 'react-redux'
 import { titleHandler } from "../methods/functions";
-import { addItem } from "../redux/cart/cartAction";
+import { addItem ,deleteItem } from "../redux/cart/cartAction";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -26,7 +26,7 @@ const ProductDetails = () => {
           <span>{category}</span>
           <span>{price}$</span>
           <button onClick={()=>dispatch(addItem(data))}>Add to cart</button>
-          <button>Erase from cart</button>
+          <button onClick={()=>dispatch(deleteItem(data))}>Erase from cart</button>
         </div>
       </div>
     </div>

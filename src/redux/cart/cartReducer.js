@@ -10,14 +10,24 @@ const cartReducer = (state=initialState,action) => {
     switch(action.type) {
         case "Add-Item":
             if(!state.selectedProducts.find(item => item.id === action.payload.id)){
-                state.selectedProducts.push(action.payload);
+                state.selectedProducts.push({
+                    ...action.payload,
+                    quantity:1,
+                });
             }
             return{
                 ...state,
-                quantity:1,
+                selectedProducts:[...state.selectedProducts]
             }
-        default: return state    
-    }
-}
-
-export default cartReducer;
+            case "Delete" :
+                const newSelectedProducts = state.selectedProducts.filter(item => item.id !== action.payload.id);
+                state.selectedProducts = newSelectedProducts;
+                return {
+                    ...state,
+                    selectedProducts:[...state.selectedProducts]
+                }   
+                default: return state    
+            }
+        }
+        
+        export default cartReducer;
