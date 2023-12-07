@@ -27,6 +27,8 @@ const ProductDetails = () => {
           <span>{price}$</span>
           <button onClick={()=>dispatch(addItem(data))}>Add to cart</button>
           <button onClick={()=>dispatch(deleteItem(data))}>Erase from cart</button>
+          <button onClick={()=>dispatch(deleteItem(data))}>-</button>
+          <button onClick={()=>dispatch(deleteItem(data))}>+</button>
         </div>
       </div>
     </div>
