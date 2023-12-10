@@ -42,3 +42,22 @@
 .rightContainer p {
   padding: 20px;
 }
+.buttonContainer button{
+  transition: all .1s ease-in;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background-color: #9bd6e199;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.buttonContainer button:hover{
+  background-color: #9bd6e1;
+}
+.addButton:active {
+  transform:rotate(360deg);
+}
+.deleteButton:active{
+  transform:rotate(360deg);
+}
