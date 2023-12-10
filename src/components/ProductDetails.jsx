@@ -1,13 +1,15 @@
 import React from "react";
 import styles from "./ProductDetails.module.css";
-
+import { FaMinus } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
+import { ImBin } from "react-icons/im";
 import { useParams } from "react-router-dom";
 
 // redux
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import {useDispatch} from 'react-redux'
 import { titleHandler } from "../methods/functions";
-import { addItem ,deleteItem } from "../redux/cart/cartAction";
+import { addItem ,deleteItem ,increaseItem ,decreaseItem } from "../redux/cart/cartAction";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -23,12 +25,14 @@ const ProductDetails = () => {
         <div className={styles.rightContainer}>
           <h3>{titleHandler(title)}</h3>
           <p>{description}</p>
-          <span>{category}</span>
-          <span>{price}$</span>
-          <button onClick={()=>dispatch(addItem(data))}>Add to cart</button>
-          <button onClick={()=>dispatch(deleteItem(data))}>Erase from cart</button>
-          <button onClick={()=>dispatch(deleteItem(data))}>-</button>
-          <button onClick={()=>dispatch(deleteItem(data))}>+</button>
+          <span>category: {category}</span>
+          <span>price: {price}$</span>
+          <div className={styles.buttonContainer}>
+            <button onClick={()=>dispatch(addItem(data))}>Add to cart</button>
+            <button onClick={()=>dispatch(deleteItem(data))}><ImBin /></button>
+            <button onClick={()=>dispatch(decreaseItem(data))}><FaMinus /></button>
+            <button onClick={()=>dispatch(increaseItem(data))}><FaPlus /></button>
+          </div>
         </div>
       </div>
     </div>

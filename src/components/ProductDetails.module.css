@@ -13,7 +13,6 @@
   align-items: center;
   width: 70%;
   margin: 0 auto;
-  border: 1px solid silver;
   height: 60%;
   border-radius: 5px;
   padding: 10px;
@@ -23,6 +22,9 @@
   flex: 1;
   width: 250px;
   height: 250px;
+  border-right: 2px solid silver;
+  border-radius: 1px;
+  padding: 10px;
 }
 .rightContainer {
   display: flex;
@@ -32,5 +34,11 @@
   height: 100%;
   justify-content: flex-start;
   align-items: center;
+  padding: 10px;
 }
-
+.rightContainer h3 {
+  border-bottom: 2px solid silver;
+}
+.rightContainer p {
+  padding: 20px;
+}

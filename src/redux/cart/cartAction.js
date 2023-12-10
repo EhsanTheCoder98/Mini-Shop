@@ -10,5 +10,17 @@ const deleteItem = (product) => {
         payload:product
     }
 }
+const decreaseItem = (product) => {
+    return {
+        type:"Decrease",
+        payload:product
+    }
+} 
+const increaseItem = (product) => {
+    return {
+        type:"Increase",
+        payload:product
+    }
+}
 
-export {addItem,deleteItem};
+export {addItem,deleteItem,decreaseItem,increaseItem};
