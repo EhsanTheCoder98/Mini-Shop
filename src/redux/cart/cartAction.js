@@ -22,5 +22,10 @@ const increaseItem = (product) => {
         payload:product
     }
 }
+const checkout = () => {
+    return {
+        type:'checkout'
+    }
+}
 
-export {addItem,deleteItem,decreaseItem,increaseItem};
+export {addItem,deleteItem,decreaseItem,increaseItem,checkout};
