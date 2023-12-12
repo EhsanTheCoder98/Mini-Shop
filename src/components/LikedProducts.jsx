@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from "./LikedProducts.module.css"
 
 const LikedProducts = () => {
     return (
-        <div>
+        <div className={styles.container}>
             liked products
         </div>
     );

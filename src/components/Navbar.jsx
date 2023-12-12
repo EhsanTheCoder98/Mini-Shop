@@ -9,7 +9,7 @@ import { useNavigate , Link } from 'react-router-dom';
 import { getAuth , signOut } from 'firebase/auth';
 
 // redux
-import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 const Navbar = () => {
     const auth = getAuth();

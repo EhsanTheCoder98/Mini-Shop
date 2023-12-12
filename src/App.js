@@ -35,8 +35,8 @@ const App = () => {
           <Route path="productdetail/:id" element={<ProductDetails />} />
           <Route path="cart" element={<Cart />}/>
           <Route path="profile" element={<Profile />}/>
-          <Route path="recentbuys" element={<RecentBuys />} />
-          <Route path="likedproducts" element={<LikedProducts />} />
+          <Route path="profile/recentbuys" element={<RecentBuys />} />
+          <Route path="profile/likedproducts" element={<LikedProducts />} />
         </Route>
       </Routes>
     </Provider>
