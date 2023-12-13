@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./LandingPage.module.css";
 import loading from "../gif/Infinity-1.1s-210px (1).gif";
 import { IoSearchOutline } from "react-icons/io5";
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 // components
 import ProductsDiv from "./ProductsDiv";
@@ -13,13 +15,10 @@ import { fetchAPI } from "../redux/products/productsAction";
 
 const LandingPage = () => {
   const dispatch = useDispatch();
-  const [isVisible, setIsVisibile] = useState(false);
   const productsData = useSelector((state) => state.productsContainer);
   useEffect(() => {
     dispatch(fetchAPI());
-    setTimeout(() => {
-      setIsVisibile(true);
-    }, 1200);
+    Aos.init({duration:500});
   }, []);
   const [search,setSearch] = useState("");
   const [sorted, setSorted] = useState(productsData.products);
@@ -41,7 +40,7 @@ const LandingPage = () => {
   return (
     <div className={styles.bigContainer}>
       <div
-        className={`${styles.leftcontainer} ${isVisible ? styles.fade : ""}`}
+        className={styles.leftcontainer}
       >
         {productsData.loading ? (
           <div className={styles.loadingContainer}>
@@ -56,7 +55,8 @@ const LandingPage = () => {
       </div>
       {!productsData.loading && !productsData.error ? (
         <div
-          className={`${styles.rightcontainer} ${isVisible ? styles.fade : ""}`}
+          className={styles.rightcontainer}
+          data-aos="fade-in"
         >
           <p>What are you looking for ?</p>
           <div className={styles.searchContainer}>

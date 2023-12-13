@@ -74,6 +74,7 @@ const cartReducer = (state = initialState, action) => {
       const checkoutObject = {
         id: timestamp,
         products: [...state.selectedProducts],
+        price: state.overallPrice
       };
       return {
         ...(state = {

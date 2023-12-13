@@ -12,7 +12,7 @@ const RecentBuys = () => {
     <div className={styles.bigContainer}>
         {buys.map((item, index) => (
             <div    className={styles.container}>
-                <RecentBuysDiv key={index} cartPurchased={item.products} />
+                <RecentBuysDiv key={index} cartPurchased={item} />
             </div>
         ))}
     </div>
