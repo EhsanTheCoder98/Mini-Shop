@@ -27,5 +27,11 @@ const checkout = () => {
         type:'checkout'
     }
 }
+const likeProduct = (product) => {
+    return {
+      type: "Like-Product",
+      payload: product,
+    };
+  };
 
-export {addItem,deleteItem,decreaseItem,increaseItem,checkout};
+export {addItem,deleteItem,decreaseItem,increaseItem,checkout,likeProduct};
