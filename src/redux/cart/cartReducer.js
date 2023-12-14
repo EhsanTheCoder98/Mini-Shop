@@ -34,7 +34,6 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         selectedProducts: [...state.selectedProducts],
-        likedProducts: [...state.likedProducts, action.payload],
         ...collector(state.selectedProducts),
         checkout: false,
       };
@@ -85,6 +84,7 @@ const cartReducer = (state = initialState, action) => {
           overallPrice: 0,
           checkout: true,
           recentBuys: [...state.recentBuys,checkoutObject],
+          likedProducts:[...state.likedProducts]
         }),
       };
       case "Like-Product":

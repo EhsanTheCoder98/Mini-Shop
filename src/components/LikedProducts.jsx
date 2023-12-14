@@ -8,7 +8,7 @@ const LikedProducts = () => {
     const likedProducts = useSelector(state=>state.cartContainer.likedProducts);
     return (
         <div className={styles.container}>
-            {likedProducts.map(item=><p>{item.title}</p>)}
+            {likedProducts.length ? likedProducts.map(item=><p>{item.title}</p>) : <h1>No Liked Products</h1>}
         </div>
     );
 };
