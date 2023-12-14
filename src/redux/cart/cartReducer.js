@@ -92,6 +92,12 @@ const cartReducer = (state = initialState, action) => {
           ...state,
           likedProducts: [...state.likedProducts, action.payload],
         };  
+      case "Unliked":
+        const newUnliked = state.likedProducts.filter(item=>item.id!==action.payload.id);
+        return {
+          ...state,
+          likedProducts:[...newUnliked]
+        }  
     default:
       return state;
   }

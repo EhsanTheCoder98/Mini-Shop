@@ -33,5 +33,11 @@ const likeProduct = (product) => {
       payload: product,
     };
   };
+const unLikeProduct = (product) => {
+    return {
+        type:"Unliked",
+        payload:product
+    }
+}  
 
-export {addItem,deleteItem,decreaseItem,increaseItem,checkout,likeProduct};
+export {addItem,deleteItem,decreaseItem,increaseItem,checkout,likeProduct,unLikeProduct};

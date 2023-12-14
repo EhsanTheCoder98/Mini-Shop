@@ -8,7 +8,7 @@ import { titleHandler } from '../methods/functions';
 
 // redux
 import { useDispatch } from 'react-redux';
-import { likeProduct } from '../redux/cart/cartAction';
+import { likeProduct,unLikeProduct } from '../redux/cart/cartAction';
 
 const ProductsDiv = ({products}) => {
     const dispatch = useDispatch();
@@ -16,6 +16,8 @@ const ProductsDiv = ({products}) => {
     useEffect(()=>{
         if(like){
             dispatch(likeProduct(products))
+        }else{
+            dispatch(unLikeProduct(products))
         }
     },[like])
     const likeHandler = () => {
