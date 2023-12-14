@@ -1,3 +1,22 @@
-.container {
+.bigContainer {
     padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    width: 110px;
+    height: 110px;
+}
+.images {
+    width: 60px ;
+    height: 60px;
+    margin: 10px;
 }
