@@ -10,7 +10,7 @@
   margin-right: 10px;
   border: 1px solid silver;
   border-radius: 10px;
-  height: 80vh;
+  height: fit-content;
   position: sticky;
   top: 70px;
 }
@@ -24,10 +24,10 @@
   width: 100%;
   text-align: center;
   padding-bottom: 20px;
-  border-bottom: 1px dashed silver;
 }
 .buttonContainer button {
-  width: 130px;
+  width: 90%;
+  height: 60px;
   background: none;
   margin: 3px auto;
   border: none;
