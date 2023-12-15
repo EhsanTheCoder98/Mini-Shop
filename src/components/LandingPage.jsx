@@ -16,12 +16,15 @@ import { fetchAPI } from "../redux/products/productsAction";
 const LandingPage = () => {
   const dispatch = useDispatch();
   const productsData = useSelector((state) => state.productsContainer);
+  const [sorted, setSorted] = useState([]);
   useEffect(() => {
     dispatch(fetchAPI());
     Aos.init({duration:500});
   }, []);
+  useEffect(() => {
+    setSorted(productsData.products);
+  }, [productsData.products]);
   const [search,setSearch] = useState("");
-  const [sorted, setSorted] = useState(productsData.products);
   const sortProducts = (category) => {
     if (productsData.products) {
       const sort = productsData.products.filter(
