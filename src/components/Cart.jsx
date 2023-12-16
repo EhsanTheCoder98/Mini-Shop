@@ -20,7 +20,7 @@ const Cart = () => {
         </div>
         {selectedProducts.length ? <div className={styles.checkoutContainer}>
             <span>Your Overall Payment Is {overallPrice.toFixed(2)}$ </span>
-            <button onClick={()=>dispatch(checkout())}>Wanna Cheackout?</button>
+            <button onClick={()=>dispatch(checkout())}>Want To Checkout?</button>
         </div> : null}
         {checkedout ? <h3 className={styles.succeedMsg}>Successfully Done!</h3> : null}
         </>

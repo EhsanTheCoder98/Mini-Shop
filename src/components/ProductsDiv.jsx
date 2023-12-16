@@ -24,7 +24,7 @@ const ProductsDiv = ({products}) => {
         setLike((prevLike)=>!prevLike)
     }
     return (
-        <div className={styles.container} data-aos="fade-in"   >
+        <div className={styles.container} data-aos="fade-right"   >
             <img src={products.image}/>
             <p className={styles.title}>{titleHandler(products.title)}</p>
             <span className={styles.title}>{products.price}$</span>

@@ -19,7 +19,7 @@ const LandingPage = () => {
   const [sorted, setSorted] = useState([]);
   useEffect(() => {
     dispatch(fetchAPI());
-    Aos.init({duration:500});
+    Aos.init({duration:1000});
   }, []);
   useEffect(() => {
     setSorted(productsData.products);
@@ -59,7 +59,7 @@ const LandingPage = () => {
       {!productsData.loading && !productsData.error ? (
         <div
           className={styles.rightcontainer}
-          data-aos="fade-in"
+          data-aos="fade-up"
         >
           <p>What are you looking for ?</p>
           <div className={styles.searchContainer}>
