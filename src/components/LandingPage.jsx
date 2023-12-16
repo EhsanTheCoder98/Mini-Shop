@@ -18,7 +18,7 @@ const LandingPage = () => {
   const productsData = useSelector((state) => state.productsContainer);
   const [sorted, setSorted] = useState([]);
   useEffect(() => {
-    dispatch(fetchAPI());
+    if(!productsData.products.length) dispatch(fetchAPI());
     Aos.init({duration:1000});
   }, []);
   useEffect(() => {
@@ -61,7 +61,6 @@ const LandingPage = () => {
           className={styles.rightcontainer}
           data-aos="fade-up"
         >
-          <p>What are you looking for ?</p>
           <div className={styles.searchContainer}>
             <input
               type="text"

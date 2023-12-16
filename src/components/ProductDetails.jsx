@@ -41,7 +41,7 @@ const ProductDetails = () => {
           <span>price: {price}$</span>
           <div className={styles.buttonContainer}>
             {!cartExistence(cartProducts, data.id) ? (
-              <button className={styles.addButton} onClick={() => dispatch(addItem(data))}>
+          <button className={styles.addButton}  onClick={() => dispatch(addItem(data))}>
                 Add to cart
               </button>
             ) : (
