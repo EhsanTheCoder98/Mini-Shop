@@ -1,39 +1,46 @@
 import React from 'react';
 import styles from './AboutUs.module.css';
+import { AiFillLike } from "react-icons/ai";
+import { FaSearch } from "react-icons/fa";
+import { IoFilter } from "react-icons/io5";
+import { FaShoppingCart } from "react-icons/fa";
+import { SiWebauthn } from "react-icons/si";
 
 const AboutUs = () => {
-    alert("rendered");
     return (
         <div className={styles.container}>
-        <h2>About Our Mini Shop</h2>
-        <p>
-          Welcome to our mini shop, where creativity meets functionality! I am Ehsan Fathalipour, the
-          developer behind this project, and I'm excited to share a bit about the journey of creating
-          this unique shopping experience.
-        </p>
-  
-        <p>
-          As a passionate React JS developer, I set out to build a platform that not only provides a
-          seamless shopping experience but also reflects my commitment to clean, efficient, and
-          user-friendly code. The use of React components, state management, and modern UI design
-          principles ensures that every interaction with our shop is both intuitive and enjoyable.
-        </p>
-  
-        <p>
-          Behind the scenes, I have implemented features such as a secure and streamlined user authentication system, allowing users to effortlessly create accounts and sign in. Additionally, the platform includes functionalities like product search, sorting products, the ability to like products, and view them in the profile, as well as tracking recently shopped carts. These features are a testament to my skills in crafting responsive and dynamic web applications.
-        </p>
-  
-        <p>
-          The goal of this mini shop is not to sell products but to showcase the potential of
-          my frontend react js  web development skills.I've employed React JS, Redux, and Firebase to develop a robust and scalable application.
-        </p>
-  
-        <p>
-          I'm dedicated to continuously improving and expanding
-          the features of our mini shop. Feel free to explore, shop, and reach out if you have any
-          questions or suggestions.
-        </p>
-      </div>
+          <div className={styles.header}>
+            <h2>This is a prototype online shop using fake API developed by Me!</h2>
+          </div>
+          <div  className={styles.seprator}></div>
+          <div className={styles.cartsContainer}>
+            <div  className={styles.carts}>
+              <h4>Effortless Exploration: Filter by Category</h4>
+              <IoFilter className={styles.icon}/>
+              <p>Explore and refine your search by easily selecting and browsing products within specific categories</p>
+            </div>
+            <div  className={styles.carts}>
+              <h4>Quick Search: Find Products Instantly</h4>
+              <FaSearch className={styles.icon} />
+              <p>Discover your desired products swiftly with our search functionality. Simply enter the product name, and our prototype website will instantly provide tailored results, making finding your favorite items a breeze.</p>
+            </div>
+            <div  className={styles.carts}>
+              <h4>Favorite Picks: Your Saved Products</h4>
+              <AiFillLike className={styles.icon} />
+              <p>Save your favorite products to your profile effortlessly! This feature lets you keep track of the items you love, making it easy to find and buy them again whenever you want.</p>
+            </div>
+            <div  className={styles.carts}>
+              <h4>Recent Carts: Your Quick Shopping History</h4>
+              <FaShoppingCart className={styles.icon} />
+              <p>Keep tabs on your recent shopping carts with ease! This feature allows you to view and revisit your recently shopped items, making it simple to track and manage your purchases.</p>
+            </div>
+            <div  className={styles.carts}>
+              <h4>SecureSign: Your Trusted Authentication</h4>
+              <SiWebauthn className={styles.icon} />
+              <p>Our authentication feature, powered by Firebase, ensures a quick and secure login experience. Enjoy peace of mind knowing your account is protected with cutting-edge technology.</p>
+            </div>
+          </div>
+        </div>
     );
 };
 
