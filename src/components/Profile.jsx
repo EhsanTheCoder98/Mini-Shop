@@ -7,10 +7,10 @@ import LikedProducts from './LikedProducts';
 
 // react-router-dom
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // firebase
 import { getAuth , signOut } from 'firebase/auth';
-import AboutUs from './AboutUs';
 
 
 const Profile = () => {
@@ -25,13 +25,12 @@ const Profile = () => {
             <div className={styles.leftContainer}>
                     {selected === 'recent' && <RecentBuys />}
                     {selected === 'liked' &&  <LikedProducts />}
-                    {selected === 'aboutus' &&  <AboutUs />}
             </div>
             <div className={styles.rightContainer}>
                 <button  onClick={()=>componentHandler('recent')}>Recent Buys</button>
                 <button  onClick={()=>componentHandler('liked')}>Liked Products</button>
                 <button>Profile Details</button>
-                <button onClick={()=>componentHandler('aboutus')}>About Us</button>
+                <button><Link to="aboutus">About Us</Link></button>
                 <button onClick={()=>signOut(auth).then(()=>{
                 alert("SignedOut Successfully");
                 navigate("/login")

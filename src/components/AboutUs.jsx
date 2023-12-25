@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './AboutUs.module.css';
 
 const AboutUs = () => {
+    alert("rendered");
     return (
         <div className={styles.container}>
         <h2>About Our Mini Shop</h2>

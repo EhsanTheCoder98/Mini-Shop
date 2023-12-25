@@ -7,8 +7,7 @@ import Navbar from "./components/Navbar";
 import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/Cart";
 import Profile from "./components/Profile";
-import RecentBuys from "./components/RecentBuys";
-import LikedProducts from "./components/LikedProducts";
+import AboutUs from "./components/AboutUs";
 
 // redux
 import { Provider } from "react-redux";
@@ -35,6 +34,7 @@ const App = () => {
           <Route path="productdetail/:id" element={<ProductDetails />} />
           <Route path="cart" element={<Cart />}/>
           <Route path="profile" element={<Profile />}/>
+          <Route path="profile/aboutus" element={<AboutUs />} />
         </Route>
       </Routes>
     </Provider>

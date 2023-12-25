@@ -24,7 +24,7 @@
 }
 .buttonContainer button {
   width: 90%;
-  height: 60px;
+  height: 40px;
   background: none;
   margin: 3px auto;
   border: none;
@@ -33,17 +33,17 @@
   background-color: rgb(219, 219, 219);
 }
 .buttonContainer button:last-child {
-    background-color: #9bd6e199;
+    background-color: rgb(238, 238, 238);
 }
 .buttonContainer button:last-child:hover{
-    background-color: #9bd7e1ca;
+    background-color: rgb(219, 219, 219);
 }
 .buttonContainer button:hover {
   background-color: rgb(209, 209, 209);
 }
 .leftcontainer {
   display: flex;
-  flex: 3;
+  flex: 6;
   width: fit-content;
   flex-wrap: wrap;
   margin-left: 10px;

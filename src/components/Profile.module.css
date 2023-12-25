@@ -30,3 +30,7 @@
     width: 100%;
 
 }
+.rightContainer a {
+    text-decoration: none;
+    color: black;
+}
