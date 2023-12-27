@@ -60,7 +60,7 @@ const Login = () => {
   return (
     <div className={styles.backgroundcontainer}>
       <div className={styles.container}>
-        <h1>Welcome To The Mini Shop</h1>
+        <h1>Welcome To Mini Shop</h1>
         <form className={styles.formContainer}>
           <input
             type="email"
@@ -76,8 +76,8 @@ const Login = () => {
             value={data.password}
             onChange={inputHandler}
           />
-          <button onClick={signupHandler}>Sign Up</button>
-          <button onClick={signinHandler}>Sign In</button>
+          <button onClick={signupHandler}>SignUp</button>
+          <button onClick={signinHandler}>LogIn</button>
         </form>
         <div className={styles.googleSigninContainer}>
           <h4> Sign In With Google Account </h4>

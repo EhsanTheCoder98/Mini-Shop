@@ -13,6 +13,9 @@ const AboutUs = () => {
             <h2>This is a prototype online shop using fake API developed by Me!</h2>
           </div>
           <div  className={styles.seprator}></div>
+          <div className={styles.topDiv}>
+            <h4>Explore Our Prototype Online Shop with Enhanced Features!</h4>
+          </div>
           <div className={styles.cartsContainer}>
             <div  className={styles.carts}>
               <h4>Effortless Exploration: Filter by Category</h4>

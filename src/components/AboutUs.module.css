@@ -3,24 +3,24 @@
   overflow: hidden;
 }
 .header {
-  background: rgb(2, 0, 36);
+  background: rgb(255, 255, 255);
   background: linear-gradient(
-    43deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(114, 9, 121, 1) 49%,
-    rgba(0, 212, 255, 1) 100%
+    167deg,
+    rgba(255, 255, 255, 1) 27%,
+    rgba(190, 190, 190, 1) 73%
   );
   width: 100%;
-  height: 70vh;
+  height: 90vh;
   border: none;
   border-radius: 2px;
 }
 .header h2 {
-  color: white;
+  color: black;
   text-align: center;
   width: 70%;
   margin: auto;
   padding-top: 23vh;
+  font-size: 2.5rem;
 }
 .seprator {
   width: 0;
@@ -34,7 +34,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 200px;
+  margin-top: 100px;
   min-height: 60vh;
   width: 100%;
 }
@@ -66,3 +66,10 @@
     width: 90px;
     height: 90px;
 } 
+.topDiv {
+  margin: 90px auto;
+  width: 50%;
+  height: 20vh;
+  text-align: center;
+  font-size: 2rem;
+}
