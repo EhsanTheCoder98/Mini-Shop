@@ -2,6 +2,8 @@
     backdrop-filter: blur(8px);
     padding: 10px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     width: 100%;
     border-bottom-right-radius: 20px;
@@ -12,6 +14,10 @@
     background: none;
     border: none;
     cursor: pointer;
+}
+.miniContainer {
+    display: flex;
+    flex-direction: row;
 }
 .profileLogo {
     width: 30px;
@@ -27,7 +33,7 @@
     width: 30px;
     height: 30px;
     color: black;
-    margin-left: 10px;
+    margin:0px 30px 0px 10px;
     transition: all .2s ease;
 }
 .cartLogo:hover {
@@ -38,6 +44,8 @@
     color: black;
     text-decoration: none;
     font-size: 1.5rem;
+    display: flex;
+    
 }
 .signoutButton {
     margin-right: 20px;
@@ -45,11 +53,8 @@
     transition: all .2s ease;
 }
 .signoutLogo {
-    width: 30px;
-    height: 30px;
-}
-.signoutButton:hover {
-    color: rgb(94, 94, 94);
+    width: 35px;
+    height: 35px;
 }
 .cartLogoContainer span {
     position: fixed;

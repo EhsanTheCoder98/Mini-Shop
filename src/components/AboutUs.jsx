@@ -8,7 +8,7 @@ import { SiWebauthn } from "react-icons/si";
 
 const AboutUs = () => {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} data-aos="fade-down" >
           <div className={styles.header}>
             <h2>This is a prototype online shop using fake API developed by Me!</h2>
           </div>
