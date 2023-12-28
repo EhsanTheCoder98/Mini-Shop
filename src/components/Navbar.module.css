@@ -58,7 +58,8 @@
 }
 .cartLogoContainer span {
     position: fixed;
-    top: 30px;
+    top: 35px;
+    right: 35px;
     font-size: 0.8rem;
     font-weight:bolder;
 }

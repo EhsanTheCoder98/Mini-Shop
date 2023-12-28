@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Navbar.module.css";
 import { CgProfile } from "react-icons/cg";
 import { FaShoppingCart } from "react-icons/fa";
-import { PiSignOutLight } from "react-icons/pi";
 import { SiShopify } from "react-icons/si";
 import { Link } from "react-router-dom";
 
@@ -11,7 +10,6 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 
 const Navbar = () => {
-  
   const overall = useSelector((state) => state.cartContainer.overallProducts);
   return (
     <div className={styles.container}>
@@ -19,9 +17,6 @@ const Navbar = () => {
         <Link to="/landingpage" className={styles.logo}>
           Mini Shop<SiShopify className={styles.signoutLogo} />
         </Link>
-        <button className={styles.signoutButton}>
-          
-        </button>
       </div>
       <div className={styles.miniContainer}>
         <Link to="profile">
