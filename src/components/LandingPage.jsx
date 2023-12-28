@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./LandingPage.module.css";
 import loading from "../gif/Infinity-1.1s-210px (1).gif";
 import { IoSearchOutline } from "react-icons/io5";
+import { IoFilter } from "react-icons/io5";
+import { MdOutlineFilterListOff } from "react-icons/md";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 
@@ -17,6 +19,7 @@ const LandingPage = () => {
   const dispatch = useDispatch();
   const productsData = useSelector((state) => state.productsContainer);
   const [sorted, setSorted] = useState([]);
+  const [filter,setFilter] = useState(false);
   useEffect(() => {
     if(!productsData.products.length) dispatch(fetchAPI());
     Aos.init({duration:1000});
@@ -40,37 +43,29 @@ const LandingPage = () => {
     const sort = productsData.products.filter(product => product.title.toLowerCase().includes(search.toLowerCase()))
     setSorted(sort);
   }
+  const clickHandler = ()=> {
+    setFilter(!filter);
+  }
   return (
     <div className={styles.bigContainer}>
-      <div
-        className={styles.leftcontainer}
-      >
-        {productsData.loading ? (
-          <div className={styles.loadingContainer}>
-            <img className={styles.phrases} src={loading} />
-            <h2>Loading Products</h2>
-          </div>
-        ) : productsData.error ? (
-          <h1 className={styles.phrases}>{productsData.error}</h1>
-        ) : (
-          sorted.map((item) => <ProductsDiv key={item.id} products={item} />)
-        )}
-      </div>
       {!productsData.loading && !productsData.error ? (
         <div
           className={styles.rightcontainer}
           data-aos="fade-up"
-        >
+          >
           <div className={styles.searchContainer}>
             <input
               type="text"
               placeholder="Search the product"
               value={search}
               onChange={(event)=>setSearch(event.target.value)}
-            />
+              />
             <button onClick={searchHandler}><IoSearchOutline className={styles.searchIcon} /></button>
           </div>
-          <div className={styles.buttonContainer}>
+          <div className={styles.filterContainer} onClick={clickHandler}  >
+            <span>Filters</span>{filter ? <MdOutlineFilterListOff className={styles.filterIcon} data-aos="fade" /> : <IoFilter className={styles.filterIcon} data-aos="fade" /> }
+          </div>
+          {filter && <div className={styles.buttonContainer} data-aos="fade-right">
             <button onClick={() => sortProducts("men's clothing")}>
               Mens Clothing
             </button>
@@ -82,9 +77,23 @@ const LandingPage = () => {
               Electronics
             </button>
             <button onClick={() => resetStore()}>Reset Store</button>
-          </div>
+          </div>}
         </div>
       ) : null}
+      <div
+        className={styles.leftcontainer}
+        >
+        {productsData.loading ? (
+          <div className={styles.loadingContainer}>
+            <img className={styles.phrases} src={loading} />
+            <h2>Loading Products</h2>
+          </div>
+        ) : productsData.error ? (
+          <h1 className={styles.phrases}>{productsData.error}</h1>
+          ) : (
+            sorted.map((item) => <ProductsDiv key={item.id} products={item} />)
+            )}
+      </div>
     </div>
   );
 };
