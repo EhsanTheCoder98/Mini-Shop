@@ -50,12 +50,9 @@
 }
 .loadingContainer {
   text-align: center;
+  width: 100vw;
   margin: 0 auto;
   padding: 1px;
-}
-.loadingContainer h2 {
-  position: fixed;
-  top: 360px;
 }
 .searchContainer {
   display: flex;
@@ -75,6 +72,10 @@
   border-radius: 5px;
   outline: none;
   margin-left: 6px;
+  transition: all .3s ease-out;
+}
+.searchContainer input:focus{
+  width: 290px;
 }
 .searchContainer input::placeholder {
   text-align: center;

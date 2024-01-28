@@ -46,6 +46,11 @@ const LandingPage = () => {
   const clickHandler = ()=> {
     setFilter(!filter);
   }
+  const keyHandler = (event) => {
+    if(event.key === "Enter"){
+      searchHandler();
+    }
+  }
   return (
     <div className={styles.bigContainer}>
       {!productsData.loading && !productsData.error ? (
@@ -59,6 +64,7 @@ const LandingPage = () => {
               placeholder="Search the product"
               value={search}
               onChange={(event)=>setSearch(event.target.value)}
+              onKeyPress={keyHandler}
               />
             <button onClick={searchHandler}><IoSearchOutline className={styles.searchIcon} /></button>
           </div>
@@ -86,7 +92,6 @@ const LandingPage = () => {
         {productsData.loading ? (
           <div className={styles.loadingContainer}>
             <img className={styles.phrases} src={loading} />
-            <h2>Loading Products</h2>
           </div>
         ) : productsData.error ? (
           <h1 className={styles.phrases}>{productsData.error}</h1>
