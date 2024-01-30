@@ -70,8 +70,7 @@ const LandingPage = () => {
           </div>
           <div className={styles.filterContainer} onClick={clickHandler}  >
             <span>Filters</span>{filter ? <MdOutlineFilterListOff className={styles.filterIcon} data-aos="fade" /> : <IoFilter className={styles.filterIcon} data-aos="fade" /> }
-          </div>
-          {filter && <div className={styles.buttonContainer} data-aos="fade-right">
+            {filter && <div className={styles.buttonContainer} data-aos="fade-down">
             <button onClick={() => sortProducts("men's clothing")}>
               Mens Clothing
             </button>
@@ -84,6 +83,7 @@ const LandingPage = () => {
             </button>
             <button onClick={() => resetStore()}>Reset Store</button>
           </div>}
+          </div>
         </div>
       ) : null}
       <div

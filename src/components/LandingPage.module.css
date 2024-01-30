@@ -1,8 +1,10 @@
 .bigContainer {
   display: flex;
   flex-direction: column;
+  z-index: 2;
 }
 .rightcontainer {
+  z-index: 3;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -37,6 +39,7 @@
   background-color: rgb(209, 209, 209);
 }
 .leftcontainer {
+  z-index: 2;
   display: flex;
   flex: 6;
   width: fit-content;
@@ -111,4 +114,39 @@
 .filterContainer span {
   font-size: small;
   margin-bottom: -6px;
+}
+
+@media (max-width:768px) {
+  .rightcontainer{
+    justify-content: center;
+    flex-direction: column;
+  }
+  .leftcontainer{
+    justify-content: center;
+  }
+  .filterContainer{
+    position: relative;
+   right: 5px;
+  }
+  .buttonContainer{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    background-color: rgb(65, 65, 65);
+    padding: 10px;
+    border-radius: 0 10px 10px 10px;
+  }
+  .searchContainer{
+    margin: 0 auto;
+  }
+  .searchContainer input:focus{
+    width: 110px;
+  }
+  .buttonContainer button {
+    width: 110px;
+    margin: 2px;
+  }
+  
 }
