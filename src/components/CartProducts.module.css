@@ -58,12 +58,15 @@
     }
     .responsiveContainer{
         flex-direction: column;
+        margin-left: 40px;
+        justify-content: center;
+        align-items: center;
     }
     .imageContainer{
-        margin-right: 0;
+        margin:0;
     }
     .centerContainer{
-        margin-left: 40px;
+        margin:0;
         text-align: center;
         font-size: 0.9rem;
     }

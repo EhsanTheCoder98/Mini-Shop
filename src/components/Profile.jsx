@@ -29,7 +29,7 @@ const Profile = () => {
             <div className={styles.rightContainer}>
                 <button  onClick={()=>componentHandler('recent')}>Recent Buys</button>
                 <button  onClick={()=>componentHandler('liked')}>Liked Products</button>
-                <button>Profile Details</button>
+                
                 <button><Link to="aboutus">About Us</Link></button>
                 <button onClick={()=>signOut(auth).then(()=>{
                 alert("SignedOut Successfully");

@@ -12,3 +12,14 @@
     border: 2px solid black;
     border-radius: 5px;
 }
+.miniContainer{
+    width: 50px;
+}
+
+@media (max-width:768px) {
+    .container {
+        width: 80%;
+        overflow-x: scroll;
+    }
+    
+}

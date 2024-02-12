@@ -62,8 +62,15 @@
 .deleteButton:active{
   transform:rotate(360deg);
 }
+.responsiveContainer {
+  display: none;
+}
 
 @media (max-width:768px) {
+  .bigcontainer{
+    display: flex;
+    flex-direction: column;
+  }
   .container{
     flex-direction: column;
     text-align: center;
@@ -72,5 +79,12 @@
     border: none;
     width: 200px;
     height: 200px;
+  }
+  .responsiveContainer{
+    display: block;
+  }
+  .responsiveContainer h1 {
+    visibility: hidden;
+    font-size: 2rem;
   }
 }

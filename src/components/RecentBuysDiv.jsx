@@ -12,7 +12,9 @@ const RecentBuysDiv = ({ cartPurchased }) => {
         </div>
       ))}
       </div>
+      <div>
         <span>{cartPurchased.price.toFixed(2)}$</span>
+      </div>
     </div>
   );
 };

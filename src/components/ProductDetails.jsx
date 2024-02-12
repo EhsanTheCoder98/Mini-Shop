@@ -59,6 +59,7 @@ const ProductDetails = () => {
               </>
             )}
           </div>
+      <div className={styles.responsiveContainer}><h1>responsive</h1></div>
         </div>
       </div>
     </div>
