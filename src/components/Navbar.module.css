@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     z-index: 100;
@@ -15,15 +15,20 @@
     border: none;
     cursor: pointer;
 }
-.miniContainer {
+.leftContainer {
     display: flex;
     flex-direction: row;
+    margin-left: 20px;
+}
+.rightContainer{
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
 }
 .profileLogo {
     width: 30px;
     height: 30px;
     color: black;
-    margin-left: 10px;
     transition: all .2s ease;
 }
 .profileLogo:hover {
@@ -52,14 +57,14 @@
     width: 30px;
     transition: all .2s ease;
 }
-.signoutLogo {
+.shopLogo {
     width: 35px;
     height: 35px;
 }
 .cartLogoContainer span {
     position: fixed;
     top: 35px;
-    right: 35px;
+    right: 50px;
     font-size: 0.8rem;
     font-weight:bolder;
 }

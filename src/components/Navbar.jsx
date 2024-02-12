@@ -13,12 +13,12 @@ const Navbar = () => {
   const overall = useSelector((state) => state.cartContainer.overallProducts);
   return (
     <div className={styles.container}>
-      <div  className={styles.miniContainer}>
+      <div  className={styles.leftContainer}>
         <Link to="/landingpage" className={styles.logo}>
-          Mini Shop<SiShopify className={styles.signoutLogo} />
+          Mini Shop<SiShopify className={styles.shopLogo} />
         </Link>
       </div>
-      <div className={styles.miniContainer}>
+      <div className={styles.rightContainer}>
         <Link to="profile">
           <CgProfile className={styles.profileLogo} />
         </Link>

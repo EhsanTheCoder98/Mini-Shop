@@ -30,10 +30,10 @@
   background-color: rgb(219, 219, 219);
 }
 .buttonContainer button:last-child {
-    background-color: rgb(238, 238, 238);
+  background-color: rgb(238, 238, 238);
 }
-.buttonContainer button:last-child:hover{
-    background-color: rgb(219, 219, 219);
+.buttonContainer button:last-child:hover {
+  background-color: rgb(219, 219, 219);
 }
 .buttonContainer button:hover {
   background-color: rgb(209, 209, 209);
@@ -63,7 +63,7 @@
   width: fit-content;
   justify-content: center;
   align-items: center;
-  margin: 10px ;
+  margin: 10px;
   text-align: center;
 }
 .searchContainer input {
@@ -75,9 +75,9 @@
   border-radius: 5px;
   outline: none;
   margin-left: 6px;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
 }
-.searchContainer input:focus{
+.searchContainer input:focus {
   width: 290px;
 }
 .searchContainer input::placeholder {
@@ -93,7 +93,7 @@
 .searchIcon {
   width: 20px;
   height: 20px;
-  transition: all .13s ease;
+  transition: all 0.13s ease;
 }
 .searchIcon:hover {
   transform: scale(1.2);
@@ -116,19 +116,21 @@
   margin-bottom: -6px;
 }
 
-@media (max-width:768px) {
-  .rightcontainer{
+@media (max-width: 768px) {
+  .rightcontainer {
     justify-content: center;
     flex-direction: column;
   }
-  .leftcontainer{
+  .leftcontainer {
     justify-content: center;
   }
-  .filterContainer{
+  .filterContainer {
     position: relative;
-   right: 5px;
+    right: 5px;
+    width: fit-content;
+    margin: 4px auto;
   }
-  .buttonContainer{
+  .buttonContainer {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -137,15 +139,14 @@
     padding: 10px;
     border-radius: 0 10px 10px 10px;
   }
-  .searchContainer{
+  .searchContainer {
     margin: 0 auto;
   }
-  .searchContainer input:focus{
-    width: 110px;
+  .searchContainer input:focus {
+    width: 160px;
   }
   .buttonContainer button {
     width: 110px;
     margin: 2px;
   }
-  
 }
