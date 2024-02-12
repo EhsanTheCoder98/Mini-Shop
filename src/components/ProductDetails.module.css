@@ -38,6 +38,7 @@
 }
 .rightContainer h3 {
   border-bottom: 2px solid silver;
+  padding: 4px;
 }
 .rightContainer p {
   padding: 20px;
@@ -60,4 +61,16 @@
 }
 .deleteButton:active{
   transform:rotate(360deg);
+}
+
+@media (max-width:768px) {
+  .container{
+    flex-direction: column;
+    text-align: center;
+  }
+  .container img {
+    border: none;
+    width: 200px;
+    height: 200px;
+  }
 }

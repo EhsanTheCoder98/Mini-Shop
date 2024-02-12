@@ -10,6 +10,7 @@
 }
 .imageContainer {
     margin-left: 40px;
+    margin-right: 120px;
 }
 .centerContainer{
     display: flex;
@@ -45,4 +46,25 @@
   }
 .buttonContainer button:hover{
     background-color: #9bd6e1;
+}
+.responsiveContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width:768px) {
+    .container {
+        width: 80%;
+    }
+    .responsiveContainer{
+        flex-direction: column;
+    }
+    .imageContainer{
+        margin-right: 0;
+    }
+    .centerContainer{
+        margin-left: 40px;
+        text-align: center;
+        font-size: 0.9rem;
+    }
 }

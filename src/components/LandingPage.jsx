@@ -22,7 +22,7 @@ const LandingPage = () => {
   const [filter,setFilter] = useState(false);
   useEffect(() => {
     if(!productsData.products.length) dispatch(fetchAPI());
-    Aos.init({duration:1000});
+    Aos.init({duration:800});
   }, []);
   useEffect(() => {
     setSorted(productsData.products);
@@ -70,7 +70,8 @@ const LandingPage = () => {
           </div>
           <div className={styles.filterContainer} onClick={clickHandler}  >
             <span>Filters</span>{filter ? <MdOutlineFilterListOff className={styles.filterIcon} data-aos="fade" /> : <IoFilter className={styles.filterIcon} data-aos="fade" /> }
-            {filter && <div className={styles.buttonContainer} data-aos="fade-down">
+          </div>
+          {filter && <div className={styles.buttonContainer} data-aos="fade-right">
             <button onClick={() => sortProducts("men's clothing")}>
               Mens Clothing
             </button>
@@ -83,7 +84,6 @@ const LandingPage = () => {
             </button>
             <button onClick={() => resetStore()}>Reset Store</button>
           </div>}
-          </div>
         </div>
       ) : null}
       <div
