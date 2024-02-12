@@ -1,10 +1,33 @@
+import React from "react";
+
 const initialState = {
   selectedProducts: [],
-  likedProducts:[],
+  likedProducts: [],
   checkout: false,
   overallProducts: 0,
   overallPrice: 0,
   recentBuys: [],
+};
+
+const loadState = () => {
+  try {
+    const serializedState = localStorage.getItem("reduxState");
+    if (serializedState === null) {
+      return initialState;
+    }
+    return JSON.parse(serializedState);
+  } catch (err) {
+    return initialState;
+  }
+};
+
+const saveState = (state) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem("reduxState", serializedState);
+  } catch {
+    
+  }
 };
 
 const collector = (item) => {
@@ -19,8 +42,7 @@ const collector = (item) => {
   return { overallProducts: overallProducts, overallPrice: overallPrice };
 };
 
-const cartReducer = (state = initialState, action) => {
-  console.log(state.recentBuys);
+const cartReducer = (state = loadState(), action) => {
   switch (action.type) {
     case "Add-Item":
       if (
@@ -31,73 +53,87 @@ const cartReducer = (state = initialState, action) => {
           quantity: 1,
         });
       }
-      return {
+      const newState = {
         ...state,
         selectedProducts: [...state.selectedProducts],
         ...collector(state.selectedProducts),
         checkout: false,
       };
+      saveState(newState);
+      return newState;
     case "Delete":
       const newSelectedProducts = state.selectedProducts.filter(
         (item) => item.id !== action.payload.id
       );
-      state.selectedProducts = newSelectedProducts;
-      return {
+      const newStateDelete = {
         ...state,
-        selectedProducts: [...state.selectedProducts],
-        ...collector(state.selectedProducts),
+        selectedProducts: [...newSelectedProducts],
+        ...collector(newSelectedProducts),
         checkout: false,
       };
+      saveState(newStateDelete);
+      return newStateDelete;
     case "Increase":
       const Iindex = state.selectedProducts.findIndex(
         (item) => item.id === action.payload.id
       );
       state.selectedProducts[Iindex].quantity++;
-      return {
+      const newStateIncrease = {
         ...state,
         selectedProducts: [...state.selectedProducts],
         ...collector(state.selectedProducts),
         checkout: false,
       };
+      saveState(newStateIncrease);
+      return newStateIncrease;
     case "Decrease":
       const Dindex = state.selectedProducts.findIndex(
         (item) => item.id === action.payload.id
       );
       state.selectedProducts[Dindex].quantity--;
-      return {
+      const newStateDecrease = {
         ...state,
         selectedProducts: [...state.selectedProducts],
         ...collector(state.selectedProducts),
         checkout: false,
       };
+      saveState(newStateDecrease);
+      return newStateDecrease;
     case "checkout":
       const timestamp = Date.now();
       const checkoutObject = {
         id: timestamp,
         products: [...state.selectedProducts],
-        price: state.overallPrice
+        price: state.overallPrice,
       };
-      return {
-        ...(state = {
-          selectedProducts: [],
-          overallProducts: 0,
-          overallPrice: 0,
-          checkout: true,
-          recentBuys: [...state.recentBuys,checkoutObject],
-          likedProducts:[...state.likedProducts]
-        }),
+      const newStateCheckout = {
+        ...state,
+        selectedProducts: [],
+        overallProducts: 0,
+        overallPrice: 0,
+        checkout: true,
+        recentBuys: [...state.recentBuys, checkoutObject],
+        likedProducts: [...state.likedProducts],
       };
-      case "Like-Product":
-        return {
-          ...state,
-          likedProducts: [...state.likedProducts, action.payload],
-        };  
-      case "Unliked":
-        const newUnliked = state.likedProducts.filter(item=>item.id!==action.payload.id);
-        return {
-          ...state,
-          likedProducts:[...newUnliked]
-        }  
+      saveState(newStateCheckout);
+      return newStateCheckout;
+    case "Like-Product":
+      const newStateLike = {
+        ...state,
+        likedProducts: [...state.likedProducts, action.payload],
+      };
+      saveState(newStateLike);
+      return newStateLike;
+    case "Unliked":
+      const newUnliked = state.likedProducts.filter(
+        (item) => item.id !== action.payload.id
+      );
+      const newStateUnliked = {
+        ...state,
+        likedProducts: [...newUnliked],
+      };
+      saveState(newStateUnliked);
+      return newStateUnliked;
     default:
       return state;
   }
