@@ -60,7 +60,7 @@ const Login = () => {
   return (
     <div className={styles.backgroundcontainer}>
       <div className={styles.container}>
-        <h1>Welcome To Mini Shop</h1>
+        <h1>Welcome To ShopExpress</h1>
         <form className={styles.formContainer}>
           <input
             type="email"

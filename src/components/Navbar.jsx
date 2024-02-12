@@ -15,7 +15,7 @@ const Navbar = () => {
     <div className={styles.container}>
       <div  className={styles.leftContainer}>
         <Link to="/landingpage" className={styles.logo}>
-          Mini Shop<SiShopify className={styles.shopLogo} />
+          ShopExpress<SiShopify className={styles.shopLogo} />
         </Link>
       </div>
       <div className={styles.rightContainer}>
