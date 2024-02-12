@@ -20,8 +20,14 @@ const ProductsDiv = ({products}) => {
             dispatch(unLikeProduct(products))
         }
     },[like])
+    useEffect(()=>{
+        const storedLike = localStorage.getItem(`like_${products.id}`);
+        setLike(JSON.parse(storedLike));
+    },[products.id])
     const likeHandler = () => {
-        setLike((prevLike)=>!prevLike)
+        const newLike = !like;
+        setLike(newLike);
+        localStorage.setItem(`like_${products.id}`, JSON.stringify(newLike));
     }
     return (
         <div className={styles.container} data-aos="fade-right"   >
