@@ -82,6 +82,6 @@
   }
   .container {
     width: 60%;
-    height: 90vh;
+    height: fit-content;
   }
 }
